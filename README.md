@@ -2,34 +2,25 @@
 
 ## Abstract
 With the rise of neural networks, there has been a focus shift from
-feature design to architecture design. Recent research suggests to au-
-tomate neural architecture search (NAS) using search methods like
-Bayesian Optimization, Reinforcement learning or evolutionary algo-
-rithms. Given a data set, these methods are applied to search for a
-(local) maximum on the function that maps the architectures to an ac-
-curacy on the data set. Some of these searches have already delivered
+feature design to architecture design. Recent research suggests to automate neural architecture search (NAS) using search methods like
+Bayesian Optimization, Reinforcement learning or evolutionary algorithms. Given a data set, these methods are applied to search for a
+(local) maximum on the function that maps the architectures to an accuracy on the data set. Some of these searches have already delivered
 architectures, that compete with state-of-the art human-generated ones.
 
 However, the above-mentioned methods are generally expensive. This
-also comes from the fact that they evaluate neural networks at the gran-
-ularity of the whole network: Evaluating a network by a metric like
-accuracy doesn’t inform about how well individual parts of the net-
-work perform and what parts need to be changed.
+also comes from the fact that they evaluate neural networks at the granularity of the whole network: Evaluating a network by a metric like
+accuracy doesn’t inform about how well individual parts of the network perform and what parts need to be changed.
 
-In previous research, neural networks have already been analyzed us-
-ing mutual information. Because the mutual information measures
-arbitrary dependencies between random variables, it is suitable for as-
-sessing the “information content” of the layers in complex classification
+In previous research, neural networks have already been analyzed using mutual information. Because the mutual information measures
+arbitrary dependencies between random variables, it is suitable for assessing the “information content” of the layers in complex classification
 tasks. However, in this work we will show that mutual information per
 se is not sufficient for neural architecture search tasks - at least not
 when estimated with MINEs, a current state of the art method.
 
 The above finding is shown in two experiments. In the first experiment,
 we try to predict a distribution over good architectures on a data set
-given an architecture and its MI on the data set. In the second exper-
-iment, we try to predict good sampling distributions for Hyperbands,
-given an architecture and its MI on the data set the sampled architec-
-tures should perform well on. In both experiments, a neural network
+given an architecture and its MI on the data set. In the second experiment, we try to predict good sampling distributions for Hyperbands,
+given an architecture and its MI on the data set the sampled architectures should perform well on. In both experiments, a neural network
 predictor leveraging the MI was not able to compete with simple base
 lines. We suggest that this is due to mutual information not being
 expressive enough for such complex tasks
